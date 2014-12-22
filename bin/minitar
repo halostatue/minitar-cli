@@ -1,0 +1,6 @@
+#! /usr/bin/env ruby
+# coding: utf-8
+
+require 'minitar/cli'
+
+exit Minitar::CLI.run(ARGV)

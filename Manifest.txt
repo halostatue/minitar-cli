@@ -1,0 +1,16 @@
+.autotest
+.gemtest
+.gitignore
+.hoerc
+Contributing.rdoc
+History.rdoc
+Licence.rdoc
+Manifest.txt
+README.rdoc
+Rakefile
+bin/minitar
+docs/bsdl.txt
+docs/ruby.txt
+lib/minitar-cli.rb
+lib/minitar/cli.rb
+test/minitest_helper.rb
