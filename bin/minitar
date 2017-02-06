@@ -1,6 +1,11 @@
 #! /usr/bin/env ruby
 # coding: utf-8
 
+git_path = File.expand_path('../../.git', __FILE__)
+if File.exist?(git_path)
+  $LOAD_PATH.unshift(File.expand_path('../../lib', __FILE__))
+end
+
 require 'minitar/cli'
 
 exit Minitar::CLI.run(ARGV)
