@@ -17,12 +17,12 @@ environment:
   - ruby_version: 24-x64
 install:
 - SET PATH=C:\Ruby%ruby_version%\bin;%PATH%
-- SET DEV=1
+# - SET DEV=1
 - ruby --version
 - gem --version
 - gem install bundler --quiet --no-ri --no-rdoc
 - bundle --version
-- pushd .. && git clone https://github.com/halostatue/minitar.git && popd
+# - pushd .. && git clone https://github.com/halostatue/minitar.git && popd
 - bundle install
 build: off
 test_script:
