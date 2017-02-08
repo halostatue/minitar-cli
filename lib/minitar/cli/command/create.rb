@@ -62,6 +62,7 @@ create Options:
     end
 
     if opts[:name] =~ /\.tar\.gz$|\.tgz$/ or opts[:compress]
+      require 'zlib'
       output = Zlib::GzipWriter.new(output)
     end
 

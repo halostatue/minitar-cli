@@ -84,6 +84,7 @@ Sort Fields:
     end
 
     if opts[:name] =~ /\.tar\.gz$|\.tgz$/ or opts[:uncompress]
+      require 'zlib'
       input = Zlib::GzipReader.new(input)
     end
 
