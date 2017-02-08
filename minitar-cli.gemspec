@@ -1,14 +1,14 @@
 # -*- encoding: utf-8 -*-
-# stub: minitar-cli 0.6 ruby lib
+# stub: minitar-cli 0.6.1 ruby lib
 
 Gem::Specification.new do |s|
   s.name = "minitar-cli"
-  s.version = "0.6"
+  s.version = "0.6.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
   s.authors = ["Austin Ziegler"]
-  s.date = "2017-02-07"
+  s.date = "2017-02-08"
   s.description = "<tt>minitar-cli</tt> is a pure-Ruby command-line tool that uses\n{minitar}[https://github.com/halostatue/minitar] to provide a command-line\ntool, +minitar+, for working with POSIX tar(1) archive files.\n\nThis is release 0.6, extracted from {minitar}[https://halostatue.ca/minitar],\nwith modernizations."
   s.email = ["halostatue@gmail.com"]
   s.executables = ["minitar"]
@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<minitar>, ["~> 0.6.0"])
       s.add_runtime_dependency(%q<powerbar>, ["~> 1.0"])
-      s.add_development_dependency(%q<minitest>, ["~> 5.9"])
+      s.add_development_dependency(%q<minitest>, ["~> 5.10"])
       s.add_development_dependency(%q<hoe-doofus>, ["~> 1.0"])
       s.add_development_dependency(%q<hoe-gemspec2>, ["~> 1.1"])
       s.add_development_dependency(%q<hoe-git>, ["~> 1.6"])
@@ -40,7 +40,7 @@ Gem::Specification.new do |s|
     else
       s.add_dependency(%q<minitar>, ["~> 0.6.0"])
       s.add_dependency(%q<powerbar>, ["~> 1.0"])
-      s.add_dependency(%q<minitest>, ["~> 5.9"])
+      s.add_dependency(%q<minitest>, ["~> 5.10"])
       s.add_dependency(%q<hoe-doofus>, ["~> 1.0"])
       s.add_dependency(%q<hoe-gemspec2>, ["~> 1.1"])
       s.add_dependency(%q<hoe-git>, ["~> 1.6"])
@@ -54,7 +54,7 @@ Gem::Specification.new do |s|
   else
     s.add_dependency(%q<minitar>, ["~> 0.6.0"])
     s.add_dependency(%q<powerbar>, ["~> 1.0"])
-    s.add_dependency(%q<minitest>, ["~> 5.9"])
+    s.add_dependency(%q<minitest>, ["~> 5.10"])
     s.add_dependency(%q<hoe-doofus>, ["~> 1.0"])
     s.add_dependency(%q<hoe-gemspec2>, ["~> 1.1"])
     s.add_dependency(%q<hoe-git>, ["~> 1.6"])

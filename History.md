@@ -1,3 +1,8 @@
+## 0.6.1 / 2017-02-08
+
+*   Fixed an issue where `bin/minitar` was not loading zlib for compressed
+    files.
+
 ## 0.6 / 2017-02-07
 
 *   Hello, minitar-cli. This is a new gem containing code originally from
