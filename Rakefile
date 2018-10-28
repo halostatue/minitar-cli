@@ -20,7 +20,7 @@ spec = Hoe.spec 'minitar-cli' do
   self.readme_file = 'README.rdoc'
   self.licenses = ['Ruby', 'BSD-2-Clause']
 
-  extra_deps << ['minitar', '~> 0.6.0']
+  extra_deps << ['minitar', '~> 0.7.0']
   extra_deps << ['powerbar', '~> 1.0']
 
   extra_dev_deps << ['hoe-doofus', '~> 1.0']

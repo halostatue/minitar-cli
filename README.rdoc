@@ -14,7 +14,7 @@ coveralls :: {<img src="https://coveralls.io/repos/halostatue/minitar-cli/badge.
 {minitar}[https://github.com/halostatue/minitar] to provide a command-line
 tool, +minitar+, for working with POSIX tar(1) archive files.
 
-This is release 0.6, extracted from {minitar}[https://halostatue.ca/minitar],
+This is release 0.7, extracted from {minitar}[https://halostatue.ca/minitar],
 with modernizations.
 
 == Synopsis
