@@ -1,3 +1,11 @@
+## 0.8 / 2019-01-05
+
+*   Updated for compatibility with minitar 0.8
+
+## 0.7 / 2018-02-19
+
+*   Updated for compatibility with minitar 0.7
+
 ## 0.6.1 / 2017-02-08
 
 *   Fixed an issue where `bin/minitar` was not loading zlib for compressed
