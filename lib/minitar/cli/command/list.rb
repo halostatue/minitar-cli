@@ -5,14 +5,14 @@
 # support have been dropped.
 class Minitar::CLI::Command::List < Minitar::CLI::Command
   def name
-    'list'
+    "list"
   end
 
   def altname
-    'ls'
+    "ls"
   end
 
-  HELP = <<-EOH.freeze
+  HELP = <<-EOH
     minitar list [OPTIONS] <tarfile|-> [<file>+]
 
 Lists files in an existing tarfile. If the tarfile is named .tar.gz or
@@ -36,32 +36,32 @@ Sort Fields:
   EOH
 
   def modestr(mode)
-    s = String.new('---')
-    s[0] = 'r' if (mode & 4) == 4
-    s[1] = 'w' if (mode & 2) == 2
-    s[2] = 'x' if (mode & 1) == 1
+    s = String.new("---")
+    s[0] = "r" if (mode & 4) == 4
+    s[1] = "w" if (mode & 2) == 2
+    s[2] = "x" if (mode & 1) == 1
     s
   end
 
   include CatchMinitarErrors
 
   def run(args, opts = {})
-    argv    = []
-    output  = nil
-    files   = []
-    opts[:field] = 'name'
+    argv = []
+    output = nil
+    files = []
+    opts[:field] = "name"
 
     while (arg = args.shift)
       case arg
-      when '--sort', '-S'
-        opts[:sort]   = true
-        opts[:field]  = args.shift
-      when '--reverse', '-R'
+      when "--sort", "-S"
+        opts[:sort] = true
+        opts[:field] = args.shift
+      when "--reverse", "-R"
         opts[:reverse] = true
-        opts[:sort]    = true
-      when '--uncompress', '-z'
+        opts[:sort] = true
+      when "--uncompress", "-z"
         opts[:uncompress] = true
-      when '-l'
+      when "-l"
         opts[:verbose] = true
       else
         argv << arg
@@ -70,35 +70,35 @@ Sort Fields:
 
     if argv.empty?
       ioe[:output] << "Not enough arguments.\n\n"
-      commander.command('help').call(%w(list))
+      commander.command("help").call(%w(list))
       return 255
     end
 
     input = argv.shift
-    if '-' == input
-      opts[:name] = 'STDIN'
+    if input == "-"
+      opts[:name] = "STDIN"
       input = ioe[:input]
     else
       opts[:name] = input
-      input = File.open(input, 'rb')
+      input = File.open(input, "rb")
     end
 
-    if opts[:name] =~ /\.tar\.gz$|\.tgz$/ or opts[:uncompress]
-      require 'zlib'
+    if /\.tar\.gz$|\.tgz$/ =~ opts[:name] || opts[:uncompress]
+      require "zlib"
       input = Zlib::GzipReader.new(input)
     end
 
     files << argv.to_a
     files.flatten!
 
-    if opts[:verbose] or opts[:progress]
-      format  = '%10s %4d %8s %8s %8d %12s %s'
-      datefmt = '%b %d  %Y'
-      timefmt = '%b %d %H:%M'
-      fields  = %w(permissions inodes user group size date fullname)
+    if opts[:verbose] || opts[:progress]
+      format = "%10s %4d %8s %8s %8d %12s %s"
+      datefmt = "%b %d  %Y"
+      timefmt = "%b %d %H:%M"
+      fields = %w(permissions inodes user group size date fullname)
     else
-      format  = '%s'
-      fields  = %w(fullname)
+      format = "%s"
+      fields = %w(fullname)
     end
 
     opts[:field] = opts[:field].to_sym
@@ -114,39 +114,39 @@ Sort Fields:
 
       value = format % fields.map { |ff|
         case ff
-        when 'permissions'
-          s = String.new(entry.directory? ? 'd' : '-')
+        when "permissions"
+          s = String.new(entry.directory? ? "d" : "-")
           s << modestr(entry.mode / 0o100)
           s << modestr(entry.mode / 0o010)
           s << modestr(entry.mode)
-        when 'inodes'
+        when "inodes"
           entry.size / 512
-        when 'user'
+        when "user"
           entry.uname || entry.uid || 0
-        when 'group'
+        when "group"
           entry.gname || entry.gid || 0
-        when 'size'
+        when "size"
           entry.size
-        when 'date'
+        when "date"
           if Time.at(entry.mtime) > oneyear
             Time.at(entry.mtime).strftime(timefmt)
           else
             Time.at(entry.mtime).strftime(datefmt)
           end
-        when 'fullname'
+        when "fullname"
           entry.full_name
         end
       }
 
       if opts[:sort]
-        output << [ entry.send(opts[:field]), value ]
+        output << [entry.send(opts[:field]), value]
       else
         ioe[:output] << value << "\n"
       end
     end
 
     if opts[:sort]
-      output = output.sort { |a, b| a[0] <=> b[0] }
+      output = output.sort_by { |a| a[0] }
       if opts[:reverse]
         output.reverse_each { |oo| ioe[:output] << oo[1] << "\n" }
       else

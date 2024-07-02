@@ -1,3 +1,5 @@
+# History
+
 ## 0.12 / 2024-08-06
 
 - Updated for compatibility with minitar 0.12.

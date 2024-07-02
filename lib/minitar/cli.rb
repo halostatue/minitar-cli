@@ -23,9 +23,9 @@ class Minitar::CLI
 
   def initialize(input = $stdin, output = $stdout, error = $stderr)
     @ioe = {
-      input: input,
-      output: output,
-      error: error
+      :input => input,
+      :output => output,
+      :error => error
     }
     @commander = Minitar::CLI::Commander.new(ioe)
     Minitar::CLI::Command.children.each do |command|
@@ -39,13 +39,13 @@ class Minitar::CLI
 
     output << "minitar #{VERSION}\n" if argv.include?("--version")
 
-    if argv.include?("--verbose") or argv.include?("-V")
+    if argv.include?("--verbose") || argv.include?("-V")
       opts[:verbose] = true
       argv.delete("--verbose")
       argv.delete("-V")
     end
 
-    if argv.include?("--progress") or argv.include?("-P")
+    if argv.include?("--progress") || argv.include?("-P")
       opts[:progress] = true
       opts[:verbose] = false
       argv.delete("--progress")
