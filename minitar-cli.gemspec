@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   end
 
   if s.respond_to? :add_runtime_dependency then
-    s.add_runtime_dependency(%q<minitar>.freeze, ["~> 0.8.0"])
+    s.add_runtime_dependency(%q<minitar>.freeze, ["~> 0.9.0"])
     s.add_runtime_dependency(%q<powerbar>.freeze, ["~> 1.0"])
     s.add_development_dependency(%q<minitest>.freeze, ["~> 5.16"])
     s.add_development_dependency(%q<hoe-doofus>.freeze, ["~> 1.0"])
@@ -40,7 +40,7 @@ Gem::Specification.new do |s|
     s.add_development_dependency(%q<rdoc>.freeze, [">= 4.0", "< 7"])
     s.add_development_dependency(%q<hoe>.freeze, ["~> 3.25"])
   else
-    s.add_dependency(%q<minitar>.freeze, ["~> 0.8.0"])
+    s.add_dependency(%q<minitar>.freeze, ["~> 0.9.0"])
     s.add_dependency(%q<powerbar>.freeze, ["~> 1.0"])
     s.add_dependency(%q<minitest>.freeze, ["~> 5.16"])
     s.add_dependency(%q<hoe-doofus>.freeze, ["~> 1.0"])
