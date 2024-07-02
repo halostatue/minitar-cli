@@ -4,7 +4,7 @@ require 'minitar'
 
 # The Minitar command-line application.
 class Minitar::CLI
-  VERSION = '0.8'.freeze #:nodoc:
+  VERSION = '0.9'.freeze #:nodoc:
 
   # rubocop:disable Lint/InheritException
   class AbstractCommandError < Exception; end
