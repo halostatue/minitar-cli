@@ -38,7 +38,7 @@ class Minitar::CLI::Command
   def call(_args, _opts = {})
     raise Minitar::CLI::AbstractCommandError
   end
-  alias [] call
+  alias_method :[], :call
 
   def help
     raise Minitar::CLI::AbstractCommandError

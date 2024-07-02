@@ -15,7 +15,7 @@ class Minitar::CLI::Commander
   end
 
   def register(command)
-    command = command.new(self) if command.kind_of?(Class)
+    command = command.new(self) if command.is_a?(Class)
     raise CommandAlreadyExists if command.commander != self
     raise CommandAlreadyExists if command?(command.name)
 
@@ -29,10 +29,10 @@ class Minitar::CLI::Commander
   end
 
   def default_command=(command)
-    command = command.new if command.kind_of?(Class)
+    command = command.new if command.is_a?(Class)
 
     @default_command =
-      if command.kind_of?(Minitar::CLI::Command)
+      if command.is_a?(Minitar::CLI::Command)
         register(command) unless command?(command.name)
         command
       elsif command?(command)
@@ -53,12 +53,12 @@ class Minitar::CLI::Commander
       default_command
     end
   end
-  alias [] command
+  alias_method :[], :command
 
   def default_ioe(ioe = {})
-    ioe[:input]   ||= $stdin
-    ioe[:output]  ||= $stdout
-    ioe[:error]   ||= $stderr
+    ioe[:input] ||= $stdin
+    ioe[:output] ||= $stdout
+    ioe[:error] ||= $stderr
     ioe
   end
 end

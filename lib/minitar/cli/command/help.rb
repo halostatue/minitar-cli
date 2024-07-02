@@ -5,10 +5,10 @@
 # support have been dropped.
 class Minitar::CLI::Command::Help < Minitar::CLI::Command
   def name
-    'help'
+    "help"
   end
 
-  COMMANDS = <<-EOS.freeze
+  COMMANDS = <<-EOS
 The commands known to minitar are:
 
     minitar create          Creates a new tarfile.
@@ -25,24 +25,24 @@ mutually exclusive. In "minitar list", --progress means the same as
 
   EOS
 
-  BASIC = <<-EOS.freeze
+  BASIC = <<-EOS
 This is a basic help message containing pointers to more information on
 how to use this command-line tool. Try:
 
     minitar help commands       list all 'minitar' commands
     minitar help <COMMAND>      show help on <COMMAND>
                                   (e.g., 'minitar help create')
-EOS
+  EOS
 
   def call(args, _opts = {})
     help_on = args.shift
 
     if commander.command?(help_on)
       ioe[:output] << commander[help_on].help
-    elsif help_on == 'commands'
+    elsif help_on == "commands"
       ioe[:output] << COMMANDS
     else
-      unless help_on.nil? or help_on.empty?
+      unless help_on.nil? || help_on.empty?
         ioe[:output] << "Unknown command: #{help_on}\n"
       end
       ioe[:output] << help

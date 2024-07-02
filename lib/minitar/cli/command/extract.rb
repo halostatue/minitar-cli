@@ -5,14 +5,14 @@
 # and 1.9 support have been dropped.
 class Minitar::CLI::Command::Extract < Minitar::CLI::Command
   def name
-    'extract'
+    "extract"
   end
 
   def altname
-    'ex'
+    "ex"
   end
 
-  HELP = <<-EOH.freeze
+  HELP = <<-EOH
     minitar extract [OPTIONS] <tarfile|-> [<file>+]
 
 Extracts files from an existing tarfile. If the tarfile is named .tar.gz
@@ -36,19 +36,19 @@ extract Options:
   include CatchMinitarErrors
 
   def run(args, opts = {})
-    argv    = []
-    output  = nil
-    dest    = '.'
-    files   = []
+    argv = []
+    output = nil
+    dest = "."
+    files = []
 
     while (arg = args.shift)
       case arg
-      when '--uncompress', '-z'
+      when "--uncompress", "-z"
         opts[:uncompress] = true
-      when '--pipe'
+      when "--pipe"
         output = ioe[:output]
         ioe[:output] = ioe[:error]
-      when '--output', '-o'
+      when "--output", "-o"
         dest = args.shift
       else
         argv << arg
@@ -57,21 +57,21 @@ extract Options:
 
     if argv.empty?
       ioe[:output] << "Not enough arguments.\n\n"
-      commander.command('help').call(%w(extract))
+      commander.command("help").call(%w(extract))
       return 255
     end
 
     input = argv.shift
-    if '-' == input
-      opts[:name] = 'STDIN'
+    if input == "-"
+      opts[:name] = "STDIN"
       input = ioe[:input]
     else
       opts[:name] = input
-      input = File.open(input, 'rb')
+      input = File.open(input, "rb")
     end
 
-    if opts[:name] =~ /\.tar\.gz$|\.tgz$/ or opts[:uncompress]
-      require 'zlib'
+    if /\.tar\.gz$|\.tgz$/ =~ opts[:name] || opts[:uncompress]
+      require "zlib"
       input = Zlib::GzipReader.new(input)
     end
 
@@ -95,14 +95,14 @@ extract Options:
         next unless files.empty? || files.include?(entry.full_name)
 
         stats = {
-          :mode     => entry.mode,
-          :mtime    => entry.mtime,
-          :size     => entry.size,
-          :gid      => entry.gid,
-          :uid      => entry.uid,
-          :current  => 0,
-          :currinc  => 0,
-          :entry    => entry
+          :mode => entry.mode,
+          :mtime => entry.mtime,
+          :size => entry.size,
+          :gid => entry.gid,
+          :uid => entry.uid,
+          :current => 0,
+          :currinc => 0,
+          :entry => entry
         }
 
         if entry.directory?
@@ -134,14 +134,14 @@ extract Options:
   def verbose
     [
       lambda { |action, name, _stats|
-        ioe[:output] << "#{name}\n" if action == :dir or action == :file_done
+        ioe[:output] << "#{name}\n" if action == :dir || action == :file_done
       },
       lambda { ioe[:output] << "\n" }
     ]
   end
 
   def progress
-    require 'powerbar'
+    require "powerbar"
     progress = PowerBar.new(:msg => opts[:name], :total => 1)
     [
       lambda { |action, name, stats|
@@ -170,6 +170,6 @@ extract Options:
   end
 
   def silent
-    [ lambda { |_, _, _| }, lambda {} ]
+    [lambda { |_, _, _| }, lambda {}]
   end
 end

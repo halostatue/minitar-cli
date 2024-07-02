@@ -1,0 +1,5 @@
+---
+parallel: true
+ruby_version: 1.8.7
+ignore:
+  - 'minitar-cli.gemspec'

@@ -10,7 +10,7 @@ Hoe.plugin :git2
 Hoe.plugin :minitest
 Hoe.plugin :rubygems
 
-spec = Hoe.spec "minitar-cli" do
+Hoe.spec "minitar-cli" do
   developer("Austin Ziegler", "halostatue@gmail.com")
 
   self.history_file = "History.md"
