@@ -1,15 +1,17 @@
 # frozen_string_literal: true
 
-require 'minitar'
+require "minitar"
 
 # The Minitar command-line application.
 class Minitar::CLI
-  VERSION = '0.9'.freeze #:nodoc:
+  VERSION = "0.12" # :nodoc:
 
   # rubocop:disable Lint/InheritException
   class AbstractCommandError < Exception; end
+
   # rubocop:enable Lint/InheritException
   class UnknownCommandError < StandardError; end
+
   class CommandAlreadyExists < StandardError; end
 
   def self.run(argv, input = $stdin, output = $stdout, error = $stderr)
@@ -21,44 +23,44 @@ class Minitar::CLI
 
   def initialize(input = $stdin, output = $stdout, error = $stderr)
     @ioe = {
-      :input  => input,
-      :output => output,
-      :error  => error
+      input: input,
+      output: output,
+      error: error
     }
     @commander = Minitar::CLI::Commander.new(ioe)
     Minitar::CLI::Command.children.each do |command|
       commander.register(command)
     end
-    commander.default_command = 'help'
+    commander.default_command = "help"
   end
 
   def run(argv)
     opts = {}
 
-    output << "minitar #{VERSION}\n" if argv.include?('--version')
+    output << "minitar #{VERSION}\n" if argv.include?("--version")
 
-    if argv.include?('--verbose') or argv.include?('-V')
+    if argv.include?("--verbose") or argv.include?("-V")
       opts[:verbose] = true
-      argv.delete('--verbose')
-      argv.delete('-V')
+      argv.delete("--verbose")
+      argv.delete("-V")
     end
 
-    if argv.include?('--progress') or argv.include?('-P')
+    if argv.include?("--progress") or argv.include?("-P")
       opts[:progress] = true
-      opts[:verbose]  = false
-      argv.delete('--progress')
-      argv.delete('-P')
+      opts[:verbose] = false
+      argv.delete("--progress")
+      argv.delete("-P")
     end
 
-    command = commander[(argv.shift or '').downcase]
-    command ||= commander['help']
+    command = commander[(argv.shift or "").downcase]
+    command ||= commander["help"]
     command.call(argv, opts)
   end
 end
 
-require 'minitar/cli/command'
-require 'minitar/cli/commander'
-require 'minitar/cli/command/help'
-require 'minitar/cli/command/create'
-require 'minitar/cli/command/extract'
-require 'minitar/cli/command/list'
+require "minitar/cli/command"
+require "minitar/cli/commander"
+require "minitar/cli/command/help"
+require "minitar/cli/command/create"
+require "minitar/cli/command/extract"
+require "minitar/cli/command/list"

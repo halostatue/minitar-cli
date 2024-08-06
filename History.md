@@ -1,3 +1,7 @@
+## 0.12 / 2024-08-06
+
+- Updated for compatibility with minitar 0.12.
+
 ## 0.9 / 2024-07-02
 
 - Updated for compatibility with minitar 0.9. Provided in [#4][] by
