@@ -16,13 +16,13 @@ Hoe.spec "minitar-cli" do
   self.history_file = "History.md"
   self.readme_file = "README.rdoc"
 
-  require_ruby_version ">= 1.8"
+  require_ruby_version ">= 3.1"
 
   self.licenses = ["Ruby", "BSD-2-Clause"]
 
   spec_extras[:metadata] = ->(val) { val["rubygems_mfa_required"] = "true" }
 
-  extra_deps << ["minitar", "~> 0.12.0"]
+  extra_deps << ["minitar", "~> 1.0.0"]
   extra_deps << ["powerbar", "~> 1.0"]
 
   extra_dev_deps << ["hoe", "~> 4.0"]

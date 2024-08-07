@@ -20,7 +20,7 @@ class Minitar::CLI::Command
   module CatchMinitarErrors # :nodoc:
     def call(args, opts)
       run(args, opts)
-    rescue Archive::Tar::Minitar::Error => error
+    rescue Minitar::Error => error
       ioe[:error] << "#{error}\n"
       5
     end
