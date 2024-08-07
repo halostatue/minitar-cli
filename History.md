@@ -1,12 +1,16 @@
 # History
 
+## 1.0.0 / 2024-08-07
+
+- Updated for compatibility with minitar 1.0.0.
+
 ## 0.12 / 2024-08-06
 
 - Updated for compatibility with minitar 0.12.
 
 ## 0.9 / 2024-07-02
 
-- Updated for compatibility with minitar 0.9. Provided in [#4][] by
+- Updated for compatibility with minitar 0.9. Provided in [#4][#4] by
   david22swan. Thanks!
 
 ## 0.8 / 2019-01-05
@@ -19,8 +23,7 @@
 
 ## 0.6.1 / 2017-02-08
 
-- Fixed an issue where `bin/minitar` was not loading zlib for compressed
-  files.
+- Fixed an issue where `bin/minitar` was not loading zlib for compressed files.
 
 ## 0.6 / 2017-02-07
 
@@ -29,15 +32,15 @@
 
 - Enhancements:
 
-  - Extracted `bin/minitar` from [minitar][].
-  - Replaced Satoru Takabayashi’s [Ruby Progress Bar][] with
-    [busyloop/powerbar][].
+  - Extracted `bin/minitar` from [minitar][minitar].
+  - Replaced Satoru Takabayashi’s [Ruby Progress Bar][Ruby Progress Bar] with
+    [busyloop/powerbar][busyloop/powerbar].
   - Added filename filtering to `minitar list`.
 
 - Bugs:
 
-  - Fixed a problem where `bin/minitar create` would not include dotfiles
-    on Unix systems.
+  - Fixed a problem where `bin/minitar create` would not include dotfiles on
+    Unix systems.
 
 - Development:
 

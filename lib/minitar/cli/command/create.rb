@@ -87,7 +87,7 @@ create Options:
         silent
       end
 
-    Archive::Tar::Minitar.pack(files, output, &watcher)
+    Minitar.pack(files, output, &watcher)
     finisher.call
     0
   ensure

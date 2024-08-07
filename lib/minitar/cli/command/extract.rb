@@ -88,10 +88,10 @@ extract Options:
       end
 
     if output.nil?
-      Archive::Tar::Minitar.unpack(input, dest, files, &watcher)
+      Minitar.unpack(input, dest, files, &watcher)
       finisher.call
     else
-      Archive::Tar::Minitar::Input.each_entry(input) do |entry|
+      Minitar::Input.each_entry(input) do |entry|
         next unless files.empty? || files.include?(entry.full_name)
 
         stats = {

@@ -109,7 +109,7 @@ Sort Fields:
     today = Time.now
     oneyear = Time.mktime(today.year - 1, today.month, today.day)
 
-    Archive::Tar::Minitar::Input.each_entry(input) do |entry|
+    Minitar::Input.each_entry(input) do |entry|
       next unless files.empty? || files.include?(entry.full_name)
 
       value = format % fields.map { |ff|
