@@ -47,7 +47,6 @@ Sort Fields:
 
   def run(args, opts = {})
     argv = []
-    output = nil
     files = []
     opts[:field] = "name"
 
