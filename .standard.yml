@@ -3,7 +3,7 @@ parallel: true
 ruby_version: 3.1
 
 ignore:
-  - 'minitar.gemspec'
+  - 'minitar-cli.gemspec'
   - pkg/**/*
 
 plugins:

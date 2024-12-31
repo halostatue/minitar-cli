@@ -4,8 +4,6 @@
 # version by one of the better-executed CLI application frameworks like GLI,
 # after Ruby 1.8 and 1.9 support have been dropped.
 class Minitar::CLI::Command
-  @children = []
-
   attr_reader :commander
   attr_reader :ioe
 
@@ -13,6 +11,8 @@ class Minitar::CLI::Command
     attr_reader :children
 
     def inherited(subclass)
+      @children ||= []
+
       children << subclass
     end
   end

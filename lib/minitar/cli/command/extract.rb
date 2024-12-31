@@ -12,25 +12,25 @@ class Minitar::CLI::Command::Extract < Minitar::CLI::Command
     "ex"
   end
 
-  HELP = <<-EOH
-    minitar extract [OPTIONS] <tarfile|-> [<file>+]
-
-Extracts files from an existing tarfile. If the tarfile is named .tar.gz
-or .tgz, then it will be uncompressed automatically. If the tarfile is
-"-", then it will be read from standard input (stdin) so that minitar
-may be piped.
-
-The files or directories that will be extracted from the tarfile are
-specified after the name of the tarfile itself. Directories will be
-processed recursively. Files must be specified in full. A file
-"foo/bar/baz.txt" cannot simply be specified by specifying "baz.txt".
-Any file not found will simply be skipped and an error will be reported.
-
-extract Options:
-    --uncompress, -z  Uncompresses the tarfile with gzip.
-    --pipe            Emits the extracted files to STDOUT for piping.
-    --output, -o      Extracts the files to the specified directory.
-
+  HELP = <<~EOH
+        minitar extract [OPTIONS] <tarfile|-> [<file>+]
+    
+    Extracts files from an existing tarfile. If the tarfile is named .tar.gz
+    or .tgz, then it will be uncompressed automatically. If the tarfile is
+    "-", then it will be read from standard input (stdin) so that minitar
+    may be piped.
+    
+    The files or directories that will be extracted from the tarfile are
+    specified after the name of the tarfile itself. Directories will be
+    processed recursively. Files must be specified in full. A file
+    "foo/bar/baz.txt" cannot simply be specified by specifying "baz.txt".
+    Any file not found will simply be skipped and an error will be reported.
+    
+    extract Options:
+        --uncompress, -z  Uncompresses the tarfile with gzip.
+        --pipe            Emits the extracted files to STDOUT for piping.
+        --output, -o      Extracts the files to the specified directory.
+    
   EOH
 
   include CatchMinitarErrors
@@ -57,7 +57,7 @@ extract Options:
 
     if argv.empty?
       ioe[:output] << "Not enough arguments.\n\n"
-      commander.command("help").call(%w(extract))
+      commander.command("help").call(%w[extract])
       return 255
     end
 
@@ -95,14 +95,14 @@ extract Options:
         next unless files.empty? || files.include?(entry.full_name)
 
         stats = {
-          :mode => entry.mode,
-          :mtime => entry.mtime,
-          :size => entry.size,
-          :gid => entry.gid,
-          :uid => entry.uid,
-          :current => 0,
-          :currinc => 0,
-          :entry => entry
+          mode: entry.mode,
+          mtime: entry.mtime,
+          size: entry.size,
+          gid: entry.gid,
+          uid: entry.uid,
+          current: 0,
+          currinc: 0,
+          entry: entry
         }
 
         if entry.directory?
@@ -142,7 +142,7 @@ extract Options:
 
   def progress
     require "powerbar"
-    progress = PowerBar.new(:msg => opts[:name], :total => 1)
+    progress = PowerBar.new(msg: opts[:name], total: 1)
     [
       lambda { |action, name, stats|
         progress_info = {}
@@ -163,7 +163,7 @@ extract Options:
         progress.show(progress_info)
       },
       lambda {
-        progress.show(:msg => opts[:name])
+        progress.show(msg: opts[:name])
         progress.close(true)
       }
     ]

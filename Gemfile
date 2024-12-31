@@ -3,6 +3,6 @@
 source "https://rubygems.org/"
 
 # Use a development version of minitar.
-gem "minitar", :path => "../minitar" if ENV["DEV"]
+gem "minitar", path: "../minitar" if ENV["DEV"]
 
 gemspec

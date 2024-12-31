@@ -33,4 +33,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency(%q<minitest-focus>.freeze, ["~> 1.0".freeze])
   s.add_development_dependency(%q<rake>.freeze, [">= 10.0".freeze, "< 14".freeze])
   s.add_development_dependency(%q<standard>.freeze, ["~> 1.0".freeze])
+  s.add_development_dependency(%q<standard-minitest>.freeze, ["~> 1.0".freeze])
+  s.add_development_dependency(%q<standard-thread_safety>.freeze, ["~> 1.0".freeze])
 end
