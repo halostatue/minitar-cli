@@ -8,30 +8,30 @@ class Minitar::CLI::Command::Help < Minitar::CLI::Command
     "help"
   end
 
-  COMMANDS = <<-EOS
-The commands known to minitar are:
-
-    minitar create          Creates a new tarfile.
-    minitar extract         Extracts files from a tarfile.
-    minitar list            Lists files in the tarfile.
-
-All commands accept the options --verbose and --progress, which are
-mutually exclusive. In "minitar list", --progress means the same as
---verbose.
-
-  --verbose, -V     Performs the requested command verbosely.
-  --progress, -P    Shows a progress bar, if appropriate, for the action
-                    being performed.
-
+  COMMANDS = <<~EOS
+    The commands known to minitar are:
+    
+        minitar create          Creates a new tarfile.
+        minitar extract         Extracts files from a tarfile.
+        minitar list            Lists files in the tarfile.
+    
+    All commands accept the options --verbose and --progress, which are
+    mutually exclusive. In "minitar list", --progress means the same as
+    --verbose.
+    
+      --verbose, -V     Performs the requested command verbosely.
+      --progress, -P    Shows a progress bar, if appropriate, for the action
+                        being performed.
+    
   EOS
 
-  BASIC = <<-EOS
-This is a basic help message containing pointers to more information on
-how to use this command-line tool. Try:
-
-    minitar help commands       list all 'minitar' commands
-    minitar help <COMMAND>      show help on <COMMAND>
-                                  (e.g., 'minitar help create')
+  BASIC = <<~EOS
+    This is a basic help message containing pointers to more information on
+    how to use this command-line tool. Try:
+    
+        minitar help commands       list all 'minitar' commands
+        minitar help <COMMAND>      show help on <COMMAND>
+                                      (e.g., 'minitar help create')
   EOS
 
   def call(args, _opts = {})

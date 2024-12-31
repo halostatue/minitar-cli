@@ -23,9 +23,9 @@ class Minitar::CLI
 
   def initialize(input = $stdin, output = $stdout, error = $stderr)
     @ioe = {
-      :input => input,
-      :output => output,
-      :error => error
+      input: input,
+      output: output,
+      error: error
     }
     @commander = Minitar::CLI::Commander.new(ioe)
     Minitar::CLI::Command.children.each do |command|

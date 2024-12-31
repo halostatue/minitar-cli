@@ -12,31 +12,31 @@ class Minitar::CLI::Command::List < Minitar::CLI::Command
     "ls"
   end
 
-  HELP = <<-EOH
-    minitar list [OPTIONS] <tarfile|-> [<file>+]
+  HELP = <<~EOH
+        minitar list [OPTIONS] <tarfile|-> [<file>+]
 
-Lists files in an existing tarfile. If the tarfile is named .tar.gz or
-.tgz, then it will be uncompressed automatically. If the tarfile is "-",
-then it will be read from standard input (stdin) so that minitar may be
-piped.
+    Lists files in an existing tarfile. If the tarfile is named .tar.gz or
+    .tgz, then it will be uncompressed automatically. If the tarfile is "-",
+    then it will be read from standard input (stdin) so that minitar may be
+    piped.
 
-If --verbose or --progress is specified, then the file list will be
-similar to that produced by the Unix command "ls -l".
+    If --verbose or --progress is specified, then the file list will be
+    similar to that produced by the Unix command "ls -l".
 
-list Options:
-    --uncompress, -z      Uncompresses the tarfile with gzip.
-    --sort [<FIELD>], -S  Sorts the list of files by the specified
-                          field. The sort defaults to the filename.
-    --reverse, -R         Reverses the sort.
-    -l                    Lists the files in detail.
+    list Options:
+        --uncompress, -z      Uncompresses the tarfile with gzip.
+        --sort [<FIELD>], -S  Sorts the list of files by the specified
+                              field. The sort defaults to the filename.
+        --reverse, -R         Reverses the sort.
+        -l                    Lists the files in detail.
 
-Sort Fields:
-  name, mtime, size
+    Sort Fields:
+      name, mtime, size
 
   EOH
 
   def modestr(mode)
-    s = String.new("---")
+    s = +"---"
     s[0] = "r" if (mode & 4) == 4
     s[1] = "w" if (mode & 2) == 2
     s[2] = "x" if (mode & 1) == 1
@@ -69,7 +69,7 @@ Sort Fields:
 
     if argv.empty?
       ioe[:output] << "Not enough arguments.\n\n"
-      commander.command("help").call(%w(list))
+      commander.command("help").call(%w[list])
       return 255
     end
 
@@ -94,10 +94,10 @@ Sort Fields:
       format = "%10s %4d %8s %8s %8d %12s %s"
       datefmt = "%b %d  %Y"
       timefmt = "%b %d %H:%M"
-      fields = %w(permissions inodes user group size date fullname)
+      fields = %w[permissions inodes user group size date fullname]
     else
       format = "%s"
-      fields = %w(fullname)
+      fields = %w[fullname]
     end
 
     opts[:field] = opts[:field].to_sym
