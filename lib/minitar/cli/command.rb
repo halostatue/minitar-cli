@@ -11,7 +11,7 @@ class Minitar::CLI::Command
     attr_reader :children
 
     def inherited(subclass)
-      @children ||= []
+      @children ||= [] # standard:disable ThreadSafety/ClassInstanceVariable
 
       children << subclass
     end

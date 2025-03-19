@@ -4,12 +4,8 @@ require "minitar"
 
 # The Minitar command-line application.
 class Minitar::CLI
-  VERSION = "1.0.0" # :nodoc:
+  class AbstractCommandError < Exception; end # standard:disable Lint/InheritException
 
-  # rubocop:disable Lint/InheritException
-  class AbstractCommandError < Exception; end
-
-  # rubocop:enable Lint/InheritException
   class UnknownCommandError < StandardError; end
 
   class CommandAlreadyExists < StandardError; end
@@ -64,3 +60,4 @@ require "minitar/cli/command/help"
 require "minitar/cli/command/create"
 require "minitar/cli/command/extract"
 require "minitar/cli/command/list"
+require "minitar/cli/version"

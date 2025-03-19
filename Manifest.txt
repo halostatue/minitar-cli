@@ -17,6 +17,7 @@ lib/minitar/cli/command/extract.rb
 lib/minitar/cli/command/help.rb
 lib/minitar/cli/command/list.rb
 lib/minitar/cli/commander.rb
+lib/minitar/cli/version.rb
 test/fixtures/bad-dir.tar.gz
 test/fixtures/spaces.tar.gz
 test/minitest_helper.rb

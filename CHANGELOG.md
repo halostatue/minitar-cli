@@ -1,6 +1,6 @@
 # Changelog
 
-## NEXT / YYYY-MM-DD
+## NEXT / 2025-MM-DD
 
 - Governance:
 
