@@ -50,7 +50,7 @@ jobs:
             'print "version=", Gem::Specification.load(ARGV[0]).rubygems_version, "\n"' \
             mime-types.gemspec >>"${GITHUB_OUTPUT}"
 
-      - uses: ruby/setup-ruby@a4effe49ee8ee5b8b5091268c473a4628afb5651 # v1.245.0
+      - uses: ruby/setup-ruby@bb6434c747fa7022e12fa1cae2a0951fcffcff26 # v1.253.0
         with:
           bundler-cache: false
           ruby-version: ruby
