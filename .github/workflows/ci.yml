@@ -78,9 +78,10 @@ jobs:
           ruby-version: '3.4'
           rubygems: latest
           bundler: 2
-          bundler-cache: true
+          bundler-cache: false
 
       - run: |
+          bundle install --jobs 4 --retry 3
           bundle exec ruby -S rake coverage --trace
         env:
           COVERAGE: true
