@@ -24,7 +24,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: ruby/setup-ruby@a4effe49ee8ee5b8b5091268c473a4628afb5651 # v1.245.0
+      - uses: ruby/setup-ruby@2a7b30092b0caf9c046252510f9273b4875f3db9 # v1.254.0
         with:
           ruby-version: '3.4'
           rubygems: latest
@@ -47,7 +47,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: ruby/setup-ruby@a4effe49ee8ee5b8b5091268c473a4628afb5651 # v1.245.0
+      - uses: ruby/setup-ruby@2a7b30092b0caf9c046252510f9273b4875f3db9 # v1.254.0
         with:
           ruby-version: '3.4'
           rubygems: latest
@@ -90,7 +90,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: ruby/setup-ruby@a4effe49ee8ee5b8b5091268c473a4628afb5651 # v1.245.0
+      - uses: ruby/setup-ruby@2a7b30092b0caf9c046252510f9273b4875f3db9 # v1.254.0
         with:
           ruby-version: ${{ matrix.ruby }}
           rubygems: latest
@@ -127,7 +127,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: ruby/setup-ruby@a4effe49ee8ee5b8b5091268c473a4628afb5651 # v1.245.0
+      - uses: ruby/setup-ruby@2a7b30092b0caf9c046252510f9273b4875f3db9 # v1.254.0
         with:
           ruby-version: ${{ matrix.ruby }}
           rubygems: latest
@@ -166,7 +166,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: ruby/setup-ruby@a4effe49ee8ee5b8b5091268c473a4628afb5651 # v1.245.0
+      - uses: ruby/setup-ruby@2a7b30092b0caf9c046252510f9273b4875f3db9 # v1.254.0
         with:
           ruby-version: ${{ matrix.ruby }}
           rubygems: latest
@@ -202,7 +202,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: ruby/setup-ruby@a4effe49ee8ee5b8b5091268c473a4628afb5651 # v1.245.0
+      - uses: ruby/setup-ruby@2a7b30092b0caf9c046252510f9273b4875f3db9 # v1.254.0
         with:
           ruby-version: ${{ matrix.ruby }}
           rubygems: latest
