@@ -1,8 +1,7 @@
 # Contributing
 
-Contribution to minitar-cli is encouraged in any form: a bug report, a feature
-request, or code contributions. There are a few DOs and DON'Ts for
-contributions.
+Contribution to minitar-cli is encouraged: bug reports, feature requests, or
+code contributions. There are a few DOs and DON'Ts that should be followed.
 
 - DO:
 
@@ -27,14 +26,28 @@ contributions.
 
 - DO NOT:
 
-  - Modify `VERSION` in `lib/minitar/version.rb`. When your patch is accepted
-    and a release is made, the version will be updated at that point.
+  - Modify `VERSION` in `lib/minitar/cli/version.rb`. When your patch is
+    accepted and a release is made, the version will be updated at that point.
 
   - Modify `minitar.gemspec`; it is a generated file. (You _may_ use
     `rake gemspec` to regenerate it if your change involves metadata related to
     gem itself).
 
   - Modify the `Gemfile`.
+
+## LLM-Generated Contribution Policy
+
+minitar-cli accepts only issues or pull requests that are well understood by the
+submitter and that, especially for pull requests, the developer can attest to
+the [Developer Certificate of Origin][dco] for each pull request (see
+[LICENCE](LICENCE.md)).
+
+If LLM assistance is used in writing pull requests, this must be documented in
+the commit message and pull request. If there is evidence of LLM assistance
+without such declaration, the pull request **will be declined**.
+
+Any contribution (bug, feature request, or pull request) that uses unreviewed
+LLM output will be rejected.
 
 ## Test Dependencies
 
@@ -65,6 +78,7 @@ Here's the most direct way to get your work merged into the project:
 - Create a pull request against halostatue/minitar-cli and describe what your
   change does and the why you think it should be merged.
 
+[dco]: licences/dco.txt
 [hoe]: https://github.com/seattlerb/hoe
 [minitest]: https://github.com/seattlerb/minitest
 [qcm]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
