@@ -1,8 +1,9 @@
 # minitar-cli
 
-- home :: https://github.com/halostatue/minitar-cli
-- code :: https://github.com/halostatue/minitar-cli
-- issues :: https://github.com/halostatue/minitar-cli/issues
+- code :: <https://github.com/halostatue/minitar-cli>
+- issues :: <https://github.com/halostatue/minitar-cli/issues>
+- changelog ::
+  <https://github.com/halostatue/minitar-cli/blob/main/CHANGELOG.md>
 
 ## Description
 
