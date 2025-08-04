@@ -18,6 +18,9 @@ lib/minitar/cli/command/help.rb
 lib/minitar/cli/command/list.rb
 lib/minitar/cli/commander.rb
 lib/minitar/cli/version.rb
+licenses/bsdl.txt
+licenses/dco.txt
+licenses/ruby.txt
 test/fixtures/bad-dir.tar.gz
 test/fixtures/spaces.tar.gz
 test/minitest_helper.rb
