@@ -11,7 +11,9 @@ code contributions. There are a few DOs and DON'Ts that should be followed.
   - Use thoughtfully-named topic branches for contributions. Rebase your commits
     into logical chunks as necessary.
 
-  - Use [quality commit messages][qcm].
+  - Use [quality commit messages][qcm] for each commit (minitar uses a rebase
+    merge strategy). Ensure that each commit includes the required Developer
+    Certificate of Origin [sign-off][sign-off].
 
   - Add your name or GitHub handle to `CONTRIBUTORS.md` and a record in the
     `CHANGELOG.md` as a separate commit from your main change. (Follow the style
@@ -82,4 +84,5 @@ Here's the most direct way to get your work merged into the project:
 [hoe]: https://github.com/seattlerb/hoe
 [minitest]: https://github.com/seattlerb/minitest
 [qcm]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+[sign-off]: LICENCE.md#developer-certificate-of-origin
 [standardrb]: https://github.com/standardrb/standard
