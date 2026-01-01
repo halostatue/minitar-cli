@@ -92,7 +92,7 @@ Both `verbose` and `progress` act as a file detail view, similar to `ls -l`.
 
 ## minitar-cli Semantic Versioning
 
-The minitar-cli tool uses a {Semantic Versioning}[http://semver.org/] scheme
+The minitar-cli tool uses a {Semantic Versioning}[https://semver.org/] scheme
 with one change:
 
 - When PATCH is zero (`0`), it will be omitted from version references.
