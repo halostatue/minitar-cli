@@ -18,20 +18,11 @@ Security reports are accepted only for the most recent major release.
 
 ## Reporting a Vulnerability
 
-By preference, use the [Tidelift security contact][tidelift]. Tidelift will
-coordinate the fix and disclosure.
+Report vulnerabilities via the [Tidelift security contact][tidelift]. Tidelift
+will coordinate the fix and disclosure.
 
-Alternatively, create a [private vulnerability report][advisory] with GitHub or
-send an email to [security@ruby.halostatue.ca][email] with the text
-`minitar-cli` in the subject. Emails sent to this address should be encrypted
-using [age][age] with the following public key:
-
-```
-age1fc6ngxmn02m62fej5cl30lrvwmxn4k3q2atqu53aatekmnqfwumqj4g93w
-```
+Alternatively, create a [private vulnerability report][advisory] with GitHub.
 
 [advisory]: https://github.com/halostatue/diff-lcs/security/advisories/new
-[age]: https://github.com/FiloSottile/age
-[email]: mailto:security@ruby.halostatue.ca
 [minitar]: https://github.com/halostatue/minitar
 [tidelift]: https://tidelift.com/security
