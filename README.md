@@ -1,5 +1,8 @@
 # minitar-cli
 
+[![RubyGems Version][shield-gems]][rubygems] ![Coveralls][shield-coveralls]
+[![Build Status][shield-ci]][ci-workflow]
+
 - code :: <https://github.com/halostatue/minitar-cli>
 - issues :: <https://github.com/halostatue/minitar-cli/issues>
 - changelog ::
@@ -97,4 +100,11 @@ with one change:
 
 - When PATCH is zero (`0`), it will be omitted from version references.
 
+[ci-workflow]: https://github.com/halostatue/minitar-cli/actions/workflows/ci.yml
+[coveralls]: https://coveralls.io/github/halostatue/minitar?branch=main
 [minitar]: https://github.com/halostatue/minitar
+[rubygems]: https://rubygems.org/gems/minitar
+[semver]: https://semver.org/
+[shield-ci]: https://img.shields.io/github/actions/workflow/status/halostatue/minitar-cli/ci.yml?style=for-the-badge "Build Status"
+[shield-coveralls]: https://img.shields.io/coverallsCoverage/github/halostatue/minitar-cli?style=for-the-badge
+[shield-gems]: https://img.shields.io/gem/v/minitar-cli?style=for-the-badge "Version"
